@@ -1,0 +1,61 @@
+---
+title: "Bayesian ANN-HMM"
+author: "Al-Ahmadgaid B. Asaad"
+date: "23 April 2016"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+## Introduction
+Chapter Title: <font color = "#FFA700"><b>Bayesian Inference and Basic Definitions</b></font><br/>
+Thesis Title: **BAYESIAN INFERENCE OF ARTIFICIAL NEURAL NETWORKS AND HIDDEN MARKOV MODELS HYBRIDS**<br/><br/>
+by **Al-Ahmadgaid B. Asaad** (`alstatr.blogspot.com`; `alasaadstat@gmail.com`)<br/>
+<br/><br/>
+This notebook is meant to provide the source code for the Bayesian Inference of MCMC methods in Chapter 3.
+
+## Monte Carlo Simulation
+The following codes simulate the monte carlo method by approximating the area under the Gaussian distribution between -1.96 and 1.96.
+
+```{r monte carlo, fig.height=5, fig.width=5, echo = FALSE}
+set.seed(123)
+
+library(magrittr)
+library(grid)
+library(gridExtra)
+library(mvtnorm)
+library(lattice)
+library(plot3D)
+library(KernSmooth)
+
+draws <- seq(1000, 100000, by = 100)
+area <- draws %>% length %>% numeric
+
+for (i in 1:(draws %>% length)) {
+    samples <- rnorm(n = draws[i])
+    area[i] <- sum(((samples > -1.96) & (samples < 1.96)) / (samples %>% length))
+}
+
+xyplot(area ~ draws, type = c("g", "l"), col = "black") %>%
+  update(xlab = "Draws", ylab = "Area")
+```
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+

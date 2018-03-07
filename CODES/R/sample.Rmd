@@ -1,0 +1,43 @@
+---
+title: <font color = "#645452">Chapter 3</font>
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+by **Al-Ahmadgaid B. Asaad** (`alstatr.blogspot.com`; `alasaadstat@gmail.com`; `alstated@gmail.com`). This notebook contains source codes used in the thesis.
+
+| <code>Chapter Title</code> | <font color = "#FFA700">Bayesian Inference and Basic Definitions </font>                                         |
+| ------------- |-----------------------------------------------------------------------------------|
+| <code>**Thesis Title**</code>  | <font color = "#FFA700">**Bayesian Inference of Artificial Neural Networks and Hidden Markov Models**</font> |
+
+
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+library(animation)
+
+saveGIF({
+  for(i in 1:100){
+    curve(sin(x), from = -5 + (i * 0.05), to = 5 + (i * 0.05), col = "red", ylab = "")
+    curve(cos(x), from = -5 + (i * 0.05), to = 5 + (i * 0.05), add = TRUE, col = "blue", ylab = "")
+    legend("topright", legend = c("sin(x)", "cos(x)"), fill = c("red", "blue"), bty = "n")
+  }
+}, interval = 0.1, ani.width = 550, ani.height = 350)
+```
+
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
